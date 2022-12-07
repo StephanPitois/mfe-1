@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<h1>MFE 1</h1>
+	<h1>MFE 1 - App</h1>
 </main>
 
 <style>
