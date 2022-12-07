@@ -5,6 +5,9 @@ if (typeof GLOBAL_MFE_PARENT_ID_MFE_1 !== 'undefined') {
 	target = document.getElementById(GLOBAL_MFE_PARENT_ID_MFE_1);
 	console.log(target);
 	console.log({GLOBAL_MFE_PARENT_ID_MFE_1});
+	if (target && target.hasChildNodes()) {
+		console.log('target already has children');
+	}
 }
 
 const app = new App({
