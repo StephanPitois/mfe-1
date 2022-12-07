@@ -1,6 +1,8 @@
 import App from './App.svelte';
 
 var target = document.body;
+	console.log('loading mfe1...');
+
 if (typeof GLOBAL_MFE_PARENT_ID_MFE_1 !== 'undefined') {
 	target = document.getElementById(GLOBAL_MFE_PARENT_ID_MFE_1);
 	console.log(target);
