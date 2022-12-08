@@ -33,7 +33,7 @@ export default {
 	output: {
 		sourcemap: true,
 		format: 'iife',
-		name: 'app',
+		name: 'mf1',
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
