@@ -1,1 +1,1 @@
-export { default as MF1 } from './MF1.svelte';
+export { default as Totoro } from './Totoro.svelte';

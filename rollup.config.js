@@ -33,15 +33,16 @@ export default {
 	output: {
 		sourcemap: true,
 		format: 'iife',
-		name: 'mf1',
+		name: 'mf1App',
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
 		svelte({
 			compilerOptions: {
 				// enable run-time checks when not in production
-				dev: !production
-			}
+				dev: !production,
+				customElement: true
+			},
 		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
