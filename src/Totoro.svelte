@@ -4,12 +4,28 @@
 	import "./lib/SomeComponent.svelte";
 	import { count } from "./lib/stores.js";
 
-	let defaultName1 = "Satsuki. I update Totoro's store $count and trigger a TOTORO_WAS_CLICKED event";
+	const defaultName1 =
+		"Satsuki. I update Totoro's store $count and trigger a TOTORO_WAS_CLICKED event";
 	let name1 = defaultName1;
 
-	let defaultName2 =
+	const defaultName2 =
 		"Mei. I update Totoro's store $count without triggering any global events";
 	let name2 = defaultName2;
+
+	const products = [
+		{
+			name: "Spirited away music box",
+			price: 79.95,
+		},
+		{
+			name: "Howl puzzle (1000pcs)",
+			price: 50.0,
+		},
+		{
+			name: "Totoro Warai Plush",
+			price: 54.95,
+		},
+	];
 
 	function handleClick1() {
 		name1 = defaultName1;
@@ -26,6 +42,14 @@
 	function handleClick2() {
 		name2 = defaultName2;
 		$count++;
+	}
+
+	function addToCart(item) {
+		window.dispatchEvent(
+			new CustomEvent("ITEM_ADDED_TO_CART", {
+				detail: item,
+			})
+		);
 	}
 </script>
 
@@ -46,6 +70,29 @@
 						<code>$count = {$count}</code>
 					</div>
 				</div>
+			</div>
+			<p>
+				Here we can put items in a cart. The cart icon (another MFE)
+				gets updated in the header when you add to the cart. This is
+				done by dispatching a <code>ITEM_ADDED_TO_CART</code> event. You
+				can view the cart on Page 2. In this demo the cart is saved in session
+				storage, but in a real world app, the cart would be saved on the
+				server.
+			</p>
+			<p>
+				Note that in this demo, we don't persist the shopping cart, so if you
+				refresh the page the content is lost.
+			</p>
+			<div class="flex" style="justify-content: start; gap: 25px">
+				{#each products as product}
+					<div class="product">
+						{product.name}<br />
+						<strong>${product.price}</strong><br /><br />
+						<button on:click={() => addToCart(product)}
+							>Add to Cart</button
+						>
+					</div>
+				{/each}
 			</div>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<fl-somecomponent name={name1} on:click={handleClick1} />
@@ -77,5 +124,13 @@
 	}
 	.mfeCardBody {
 		padding: 10px;
+	}
+	.product {
+		border: 1px solid #333;
+		border-radius: 5px;
+		background: rgb(238 238 238 / 50%);
+		padding: 10px;
+		width: 200px;
+		max-width: 150px;
 	}
 </style>
