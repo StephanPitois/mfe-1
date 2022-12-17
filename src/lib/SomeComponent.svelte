@@ -25,6 +25,16 @@
 </div>
 
 <style>
+	/* 
+	@import url seems to be an acceptable way to share global styles.
+	@import seems to only import the style once, even when called
+	by several components on the same page. And from what I've seen
+	so far, the imported styles don't seem to be inlined in the 
+	generated web component, which is good as that prevents
+	duplication and bloat. global.css is defined in the app shell.
+	*/
+	@import "/global.css";
+    
     .mfeCard {
         font-size: small;
         border: 1px solid #b7a3d1;

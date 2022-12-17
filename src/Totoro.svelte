@@ -3,6 +3,7 @@
 <script>
 	import "./lib/SomeComponent.svelte";
 	import { count } from "./lib/stores.js";
+	// import { Confetti } from "svelte-confetti";
 
 	const defaultName1 =
 		"Satsuki. I update Totoro's store $count and trigger a TOTORO_WAS_CLICKED event";
@@ -53,20 +54,20 @@
 	}
 </script>
 
-<div part="mfeCard">
-	<div part="mfeCardTitle">Micro-Frontend</div>
-	<div part="mfeCardBody">
-		<main part="mfeMain">
-			<h1 part="mfeMainH1">MFE 1: Totoro (トトロ, Totoro)</h1>
+<div class="mfeCard wrapper">
+	<div class="mfeCardTitle">Micro-Frontend</div>
+	<div class="mfeCardBody">
+		<main class="mfeMain">
+			<h1 class="mfeMainH1">MFE 1: Totoro (トトロ, Totoro)</h1>
 			<div class="flex">
 				<img
-					part="mfeMainImg"
+					class="mfeMainImg"
 					src="/img/totoro.jpeg"
 					alt="The main characters of My Neighbor Totoro."
 				/>
-				<div part="mfeCard">
-					<div part="mfeCardTitle">Stores owned by Totoro</div>
-					<div part="mfeCardBody" class="mfeCardBody">
+				<div class="mfeCard">
+					<div class="mfeCardTitle">Stores owned by Totoro</div>
+					<div class="mfeCardBody">
 						<code>$count = {$count}</code>
 					</div>
 				</div>
@@ -80,8 +81,8 @@
 				server.
 			</p>
 			<p>
-				Note that in this demo, we don't persist the shopping cart, so if you
-				refresh the page the content is lost.
+				Note that in this demo, we don't persist the shopping cart, so
+				if you refresh the page the content is lost.
 			</p>
 			<div class="flex" style="justify-content: start; gap: 25px">
 				{#each products as product}
@@ -91,6 +92,7 @@
 						<button on:click={() => addToCart(product)}
 							>Add to Cart</button
 						>
+						<!-- <Confetti /> -->
 					</div>
 				{/each}
 			</div>
@@ -98,7 +100,7 @@
 			<fl-somecomponent name={name1} on:click={handleClick1} />
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<fl-somecomponent name={name2} on:click={handleClick2}>
-				<p part="mfeMainP">
+				<p class="mfeMainP">
 					This is some child content that will overwrite the default
 					slot content. With Svelte, slots are loaded lazily, but when
 					compiled to custom elements (web components), they are
@@ -116,13 +118,22 @@
 </div>
 
 <style>
+	/* 
+	@import url seems to be an acceptable way to share global styles.
+	@import seems to only import the style once, even when called
+	by several components on the same page. And from what I've seen
+	so far, the imported styles don't seem to be inlined in the 
+	generated web component, which is good as that prevents
+	duplication and bloat. global.css is defined in the app shell.
+	*/
+	@import "/global.css";
 	.flex {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		margin-bottom: 25px;
 	}
-	.mfeCardBody {
+	.wrapper .mfeCard .mfeCardBody {
 		padding: 10px;
 	}
 	.product {
