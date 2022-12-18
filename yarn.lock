@@ -63,6 +63,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@neoconfetti/svelte@^1.0.0":
+  "integrity" "sha512-SmksyaJAdSlMa9cTidVSIqYo1qti+WTsviNDwgjNVm+KQ3DRP2Df9umDIzC4vCcpEYY+chQe0i2IKnLw03AT8Q=="
+  "resolved" "https://registry.npmjs.org/@neoconfetti/svelte/-/svelte-1.0.0.tgz"
+  "version" "1.0.0"
+
 "@polka/url@^1.0.0-next.20":
   "integrity" "sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g=="
   "resolved" "https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.21.tgz"
@@ -221,6 +226,13 @@
   "resolved" "https://registry.npmjs.org/builtin-modules/-/builtin-modules-3.2.0.tgz"
   "version" "3.2.0"
 
+"carbon-components-svelte@^0.70.13":
+  "integrity" "sha512-p6wX8004BM6DrrLH1JJWbkR/VybU0gra+jDWlSW1V2aO8XmAz81evnDLZuTrvbHNkEXPiaC+athSjNsBOf0SjA=="
+  "resolved" "https://registry.npmjs.org/carbon-components-svelte/-/carbon-components-svelte-0.70.13.tgz"
+  "version" "0.70.13"
+  dependencies:
+    "flatpickr" "4.6.9"
+
 "chalk@^2.0.0":
   "integrity" "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ=="
   "resolved" "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz"
@@ -318,6 +330,11 @@
   "version" "7.0.1"
   dependencies:
     "to-regex-range" "^5.0.1"
+
+"flatpickr@4.6.9":
+  "integrity" "sha512-F0azNNi8foVWKSF+8X+ZJzz8r9sE1G4hl06RyceIaLvyltKvDl6vqk9Lm/6AUUCi5HWaIjiUbk7UpeE/fOXOpw=="
+  "resolved" "https://registry.npmjs.org/flatpickr/-/flatpickr-4.6.9.tgz"
+  "version" "4.6.9"
 
 "fs.realpath@^1.0.0":
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8= sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
@@ -744,11 +761,6 @@
   "integrity" "sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w=="
   "resolved" "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   "version" "1.0.0"
-
-"svelte-confetti@^1.2.2":
-  "integrity" "sha512-LkvWO732jRNmYykWi0IOK7xoBX241p+p+tC7Ef1EcO3TK9b9lpB/vYqKkcwVya+onG2SgQsX2g+JVbVKxq5ixQ=="
-  "resolved" "https://registry.npmjs.org/svelte-confetti/-/svelte-confetti-1.2.2.tgz"
-  "version" "1.2.2"
 
 "svelte-preprocess@^4.10.7":
   "integrity" "sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw=="
