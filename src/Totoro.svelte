@@ -1,18 +1,22 @@
 <script>
-	import { Button, Tile } from "carbon-components-svelte";
+	// import { Button, Tile } from "carbon-components-svelte";
+	import ProductCard from "./lib/components/ProductCard.svelte";
 
 	const products = [
 		{
-			name: "Spirited away music box",
-			price: 79.95,
-		},
-		{
-			name: "Howl puzzle (1000pcs)",
-			price: 50.0,
-		},
-		{
 			name: "Totoro Warai Plush",
-			price: 54.95,
+			price: 55,
+			imageUrl: "/img/totoro.jpeg",
+		},
+		{
+			name: "Catbus puzzle (1000pcs)",
+			price: 50,
+			imageUrl: "/img/catbus.jpeg",
+		},
+		{
+			name: "Spirited away music box",
+			price: 80,
+			imageUrl: "/img/no-face.jpeg",
 		},
 	];
 
@@ -26,26 +30,17 @@
 </script>
 
 <div class="mfeCard wrapper">
-	<div class="mfeCardTitle">Micro-Frontend</div>
 	<div class="mfeCardBody">
 		<main class="mfeMain">
-			<h1 class="mfeMainH1">Products | MFE 1: Totoro (トトロ, Totoro)</h1>
+			<h1 class="mfeMainH1">Products | MFE 1: Totoro</h1>
 			<div class="content">
-				<div class="flex">
-					<img
-						class="mfeMainImg"
-						src="/img/totoro.jpeg"
-						alt="Totoro"
-					/>
-				</div>
 				<p>
-					"Add to Cart" triggers an <code
-						>ITEM_ADDED_TO_CART</code
-					> event. The Shopping Cart listens to that event and gets updated.
+					"Add to Cart" triggers an <code>ITEM_ADDED_TO_CART</code> event.
+					The Shopping Cart listens to that event and gets updated.
 				</p>
-				<div class="flex" style="justify-content: start; gap: 25px">
+				<div class="flex flex-col lg:flex-row justify-start gap-6">
 					{#each products as product}
-						<Tile>
+						<!-- <Tile>
 							{product.name}<br />
 							<strong>${product.price}</strong><br /><br />
 							<Button
@@ -53,7 +48,14 @@
 								on:click={() => addToCart(product)}
 								>Add to Cart</Button
 							>
-						</Tile>
+						</Tile> -->
+						<ProductCard
+							imageUrl={product.imageUrl}
+							title={product.name}
+							buttonText={"Add to Cart"}
+							priceText={`\$${product.price}`}
+							on:click={() => addToCart(product)}
+						/>
 					{/each}
 				</div>
 			</div>
@@ -62,11 +64,11 @@
 </div>
 
 <style>
-	.flex {
+	/* .flex {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-	}
+	} */
 	.wrapper .mfeCard .mfeCardBody {
 		padding: 10px;
 	}
