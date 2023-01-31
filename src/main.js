@@ -1,1 +1,1 @@
-export { default as Totoro } from './Totoro.svelte';
+export { default as Products } from './Products.svelte';
