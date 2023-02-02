@@ -27,12 +27,12 @@
 
 <main>
     <h1>Products</h1>
-    <div class="content">
+    <div class="justify-between gap-6">
         <p>
             "Add to Cart" triggers an
             <code>ITEM_ADDED_TO_CART</code> event, which updates the Shopping Cart.
         </p>
-        <div class="flex flex-col lg:flex-row justify-start gap-6">
+        <div class="lg:flex-row justify-start gap-6">
             {#each products as product}
                 <ProductCard
                     title={product.name}
@@ -44,12 +44,3 @@
         </div>
     </div>
 </main>
-
-<style>
-    .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 25px;
-    }
-</style>
