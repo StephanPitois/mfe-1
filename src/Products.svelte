@@ -3,16 +3,28 @@
 
     const products = [
         {
-            name: "Totoro Warai Plush",
-            price: 55,
+            name: "No Face Kaonashi Piggy Bank",
+            price: 30,
         },
         {
-            name: "Catbus puzzle (1000pcs)",
-            price: 50,
+            name: "Princess Mononoke Tree Spirits Figures",
+            price: 10,
         },
         {
-            name: "Spirited away music box",
-            price: 80,
+            name: "Howl’s Mini Castle Figure",
+            price: 90,
+        },
+        {
+            name: "Totoro At The Bus Stop",
+            price: 17,
+        },
+        {
+            name: "Jiji Figures 6pcs/set",
+            price: 17,
+        },
+        {
+            name: "Spirited Away Tumbler 3pcs/set",
+            price: 27,
         },
     ];
 </script>
@@ -24,7 +36,7 @@
             "Add to Cart" triggers an
             <code>ITEM_ADDED_TO_CART</code> event, which updates the Shopping Cart.
         </p>
-        <div class="lg:flex-row justify-start gap-6">
+        <div class="products flex-wrap lg:flex-row gap-6">
             {#each products as product}
                 <ProductCard {product} />
             {/each}

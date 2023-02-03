@@ -23,7 +23,7 @@
     }
 </script>
 
-<article>
+<article class="w-full lg:w-1/3-gap-6">
     <strong class="truncate">{product.name}</strong>
     <p>{`\$${product.price}`}</p>
     {#if state === "adding"}
@@ -37,10 +37,12 @@
 
 <style>
     article {
-        margin-top: 0;
-        margin-bottom: 1rem;
+        margin: 0;
         padding: 1rem;
-        flex: 1 1 0;
+    }
+
+    strong {
+        display: block;
     }
 
     button {
