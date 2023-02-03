@@ -23,9 +23,11 @@
     }
 </script>
 
-<article class="w-full lg:w-1/3-gap-6">
-    <strong class="truncate">{product.name}</strong>
-    <p>{`\$${product.price}`}</p>
+<article class="flex flex-col justify-between w-full lg:w-1/4-gap-6">
+    <div>
+        <strong class="truncate-max-2">{product.name}</strong>
+        <p>{`\$${product.price}`}</p>
+    </div>
     {#if state === "adding"}
         <button aria-busy="true" class="secondary">Please wait…</button>
     {:else if state === "added"}

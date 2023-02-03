@@ -36,7 +36,7 @@
             "Add to Cart" triggers an
             <code>ITEM_ADDED_TO_CART</code> event, which updates the Shopping Cart.
         </p>
-        <div class="products flex-wrap lg:flex-row gap-6">
+        <div class="flex-wrap lg:flex-row gap-6">
             {#each products as product}
                 <ProductCard {product} />
             {/each}
