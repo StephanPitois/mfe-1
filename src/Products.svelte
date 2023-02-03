@@ -15,14 +15,6 @@
             price: 80,
         },
     ];
-
-    function addToCart(item) {
-        window.dispatchEvent(
-            new CustomEvent("ITEM_ADDED_TO_CART", {
-                detail: item,
-            })
-        );
-    }
 </script>
 
 <main>
@@ -34,12 +26,7 @@
         </p>
         <div class="lg:flex-row justify-start gap-6">
             {#each products as product}
-                <ProductCard
-                    title={product.name}
-                    buttonText={"Add to Cart"}
-                    priceText={`\$${product.price}`}
-                    on:click={() => addToCart(product)}
-                />
+                <ProductCard {product} />
             {/each}
         </div>
     </div>

@@ -1,14 +1,38 @@
 <script>
-    export let title = "";
-    export let buttonText = "";
-    export let priceText = "";
+    import { tick } from "svelte";
+
+    export let product;
+
+    let state = "";
+
+    async function addToCart(item) {
+        state = "adding";
+        await tick();
+        window.dispatchEvent(
+            new CustomEvent("ITEM_ADDED_TO_CART", {
+                detail: item,
+            })
+        );
+        setTimeout(async () => {
+            state = "added";
+            await tick();
+            setTimeout(() => {
+                state = "";
+            }, 600);
+        }, 300);
+    }
 </script>
 
 <article>
-    <strong class="truncate">{title}</strong>
-    <p>{priceText}</p>
-    <!-- TODO: show some sort of feedback when item added -->
-    <button on:click>{buttonText}</button>
+    <strong class="truncate">{product.name}</strong>
+    <p>{`\$${product.price}`}</p>
+    {#if state === "adding"}
+        <button aria-busy="true" class="secondary">Please wait…</button>
+    {:else if state === "added"}
+        <button class="secondary">Item added!</button>
+    {:else}
+        <button on:click={() => addToCart(product)}>Add to Cart</button>
+    {/if}
 </article>
 
 <style>
