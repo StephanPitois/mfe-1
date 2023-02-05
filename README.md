@@ -2,6 +2,10 @@
 
 MFE used in https://github.com/StephanPitois/mfe-shell
 
+## Events
+
+- Triggers: `product:add-to-cart`
+
 ---
 
 # Svelte
