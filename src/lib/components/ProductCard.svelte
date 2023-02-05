@@ -5,12 +5,12 @@
 
     let state = "";
 
-    async function addToCart(item) {
+    async function addToCart(product) {
         state = "adding";
         await tick();
         window.dispatchEvent(
-            new CustomEvent("ITEM_ADDED_TO_CART", {
-                detail: item,
+            new CustomEvent("product:add-to-cart", {
+                detail: product,
             })
         );
         setTimeout(async () => {
