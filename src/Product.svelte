@@ -9,9 +9,11 @@
 
 <main>
     {#if product}
-        <h1>{product.name}</h1>
-        <p>{product.description}</p>
-        <p>${product.price}</p>
-        <AddButton {product} fullWidth={false} />
+        <article>
+            <h1>{product.name}</h1>
+            <p>{product.description}</p>
+            <p>${product.price}</p>
+            <AddButton {product} fullWidth={false} />
+        </article>
     {/if}
 </main>

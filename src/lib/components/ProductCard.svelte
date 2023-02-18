@@ -13,10 +13,10 @@
 </article>
 
 <style>
-    article {
+    /* article {
         margin: 0;
         padding: 1rem;
-    }
+    } */
 
     strong {
         display: block;
@@ -24,6 +24,7 @@
 
     a {
         /* TODO: use var */
-        color: hsl(205deg, 20%, 32%);
+        /* color: hsl(205deg, 20%, 32%); */
+        color: #2f353f;
     }
 </style>
