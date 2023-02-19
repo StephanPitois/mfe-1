@@ -2,6 +2,10 @@
 
 MFE used in https://github.com/StephanPitois/mfe-shell
 
+## Environment Variables
+
+- `PUBLIC_PRODUCTS_API`
+
 ## Events
 
 - Triggers: `product:add-to-cart`
