@@ -1,4 +1,4 @@
-# Micro-Frontend
+# Products Micro-Frontend
 
 MFE used in https://github.com/StephanPitois/mfe-shell
 
