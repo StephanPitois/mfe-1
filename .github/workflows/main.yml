@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+      
+env:
+  PUBLIC_PRODUCTS_API: https://rv4i6v69pl.execute-api.us-east-2.amazonaws.com/default/products
 
 jobs:
   deploy:
