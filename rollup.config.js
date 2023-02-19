@@ -3,7 +3,12 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import replace from '@rollup/plugin-replace';
+import { config } from 'dotenv';
 // import css from 'rollup-plugin-css-only';
+
+// Load environment variables from .env file
+config();
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -34,12 +39,12 @@ export default {
 		// I do not recommened disabling or
 		// inlining the sourcemap at the moment
 		// sourcemap: production ? false : 'inline',
-		sourcemap: true,
-		format: 'iife',
-		name: 'remote_app_1',
-		file: 'public/build/bundle.js',
-		inlineDynamicImports: true, // Fix for "UMD and IIFE output formats are not supported for code-splitting builds"
-	}, {
+		// 	sourcemap: true,
+		// 	format: 'iife',
+		// 	name: 'remote_app_1',
+		// 	file: 'public/build/bundle.js',
+		// 	inlineDynamicImports: true, // Fix for "UMD and IIFE output formats are not supported for code-splitting builds"
+		// }, {
 		file: 'public/build/bundle.esm.js',
 		format: 'esm',
 		sourcemap: true
@@ -49,6 +54,12 @@ export default {
 		sourcemap: true
 	}],
 	plugins: [
+		replace({
+			preventAssignment: true,
+			values: {
+				'process.env.PUBLIC_PRODUCTS_API': JSON.stringify(process.env.PUBLIC_PRODUCTS_API)
+			}
+		}),
 		svelte({
 			emitCss: false,
 			compilerOptions: {
