@@ -23,4 +23,4 @@ jobs:
         aws-region: us-east-1
 #         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
     - name: Sync build artifacts to S3
-      run: aws s3 sync ./build s3://mfe1-alpha --delete --acl public-read
+      run: aws s3 sync build s3://mfe1-alpha --delete --acl public-read
